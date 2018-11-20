@@ -14,19 +14,19 @@ Import types and use them ;-)
 
 Like built-in `ReturnType` but for the args of a function, works for any number of arguments
 
-```
+```ts
 import { ArgsType } from "ts-types-utils";
 function myFunc(a: string, b: number) {}
-const all: ArgsType<typeof myFunc> // [string, number]
-const first: ArgsType<typeof myFunc>[0] // string
-const second: ArgsType<typeof myFunc>[1] // number
+const all: ArgsType<typeof myFunc>; // [string, number]
+const first: ArgsType<typeof myFunc>[0]; // string
+const second: ArgsType<typeof myFunc>[1]; // number
 ```
 
 ### Match<T, M, N> // T is object, M is what to match to, N negate
 
 Pick from T all properties that match M, or not match M if N is false
 
-```
+```ts
 import { Match } from "ts-types-utils";
 
 type FunctionProperties<T> = Match<T, Function>; // Match<T, Function, true>
