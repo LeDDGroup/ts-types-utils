@@ -10,7 +10,9 @@ Type utilities for typescript
 
 Import types and use them ;-)
 
-### ArgsType<F> // F is function
+### ArgsType
+
+`ArgsType<F> // F is function`
 
 Like built-in `ReturnType` but for the args of a function, works for any number of arguments
 
@@ -22,7 +24,9 @@ const first: ArgsType<typeof myFunc>[0]; // string
 const second: ArgsType<typeof myFunc>[1]; // number
 ```
 
-### Match<T, M, N> // T is object, M is what to match to, N negate
+### Match
+
+`Match<T, M, N> // T is object, M is what to match to, N negate`
 
 Pick from T all properties that match M, or not match M if N is false
 
