@@ -12,13 +12,13 @@
     "utility",
     "utils"
   ],
-  "homepage": "https://github.com/danielpa9708/ts-type-utils#readme",
+  "homepage": "https://github.com/danielpa9708/ts-types-utils#readme",
   "bugs": {
-    "url": "https://github.com/danielpa9708/ts-type-utils/issues"
+    "url": "https://github.com/danielpa9708/ts-types-utils/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danielpa9708/ts-type-utils.git"
+    "url": "git+https://github.com/danielpa9708/ts-types-utils.git"
   },
   "license": "MIT",
   "author": "Daniel Perez Alvarez <danielpza@protonmail.com>",
