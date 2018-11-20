@@ -1,0 +1,61 @@
+{
+  "name": "ts-types-utils",
+  "version": "1.0.0",
+  "description": "Type utilities for typescript",
+  "keywords": [
+    "args",
+    "arguments",
+    "function",
+    "types",
+    "typescript",
+    "utilities",
+    "utility",
+    "utils"
+  ],
+  "homepage": "https://github.com/danielpa9708/ts-type-utils#readme",
+  "bugs": {
+    "url": "https://github.com/danielpa9708/ts-type-utils/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielpa9708/ts-type-utils.git"
+  },
+  "license": "MIT",
+  "author": "Daniel Perez Alvarez <danielpza@protonmail.com>",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsc -p tsconfig-build.json",
+    "prepare": "npm run build",
+    "release": "standard-version",
+    "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test && pretty-quick --staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@types/jest": "^23.3.9",
+    "husky": "^1.1.2",
+    "jest": "^23.6.0",
+    "prettier": "^1.13.7",
+    "pretty-quick": "^1.8.0",
+    "standard-version": "^4.4.0",
+    "ts-jest": "^23.10.4",
+    "typescript": "^3.1.6",
+    "typescript-test-utils": "^1.2.0"
+  }
+}
