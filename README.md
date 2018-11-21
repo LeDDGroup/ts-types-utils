@@ -26,9 +26,9 @@ const second: ArgsType<typeof myFunc>[1]; // number
 
 ### Match
 
-`Match<T, M, N> // T is object, M is what to match to, N negate`
+`Match<T, M, F> // T is object, M is what to match to, F negate`
 
-Pick from T all properties that match M, or not match M if N is false
+Pick from T all properties that match M, or not match M if F is false
 
 ```ts
 import { Match } from "ts-types-utils";
@@ -36,15 +36,15 @@ import { Match } from "ts-types-utils";
 type FunctionProperties<T> = Match<T, Function>; // Match<T, Function, true>
 type NonFunctionProperties<T> = Match<T, Function, false>;
 
-const foo = {
-    a: string;
-    b: number;
-    c: () => void;
-    d: (hello:string) => number;
-}
+type Foo = {
+  a: string;
+  b: number;
+  c: () => void;
+  d: (hello: string) => number;
+};
 
-const funcs: NonFunctionProperties<typeof foo> // { a: string, b: number }
-const funcs: FunctionProperties<typeof foo> // { c: () => void; d: (hello: string) => number }
+const nonfuncs: NonFunctionProperties<Foo>; // { a: string, b: number }
+const funcs: FunctionProperties<Foo>; // { c: () => void; d: (hello: string) => number }
 ```
 
 ### Assign
@@ -74,3 +74,7 @@ const good: Assign<A, B> = {
   baz: false
 };
 ```
+
+## Related
+
+Tests were made with [typescript-test-utils](https://github.com/danielpa9708/typescript-test-utils "typescript-test-utils")
