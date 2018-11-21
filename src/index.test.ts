@@ -1,5 +1,6 @@
 import { assertTrue, Equals } from "typescript-test-utils";
 import { Match, ArgsType } from "./index";
+import { Assign } from "./assign";
 
 it("Match", () => {
   type FunctionProperties<T> = Match<T, Function>;
@@ -30,4 +31,19 @@ it("ArgsType", () => {
   assertTrue<Equals<ArgsType<TestFunction>[0], string>>();
   assertTrue<Equals<ArgsType<TestFunction>[1], number>>();
   assertTrue<Equals<ArgsType<TestFunction>[2], null>>();
+});
+
+it("Assign", () => {
+  type A = {
+    foo: string;
+    bar: number;
+  };
+  type B = {
+    foo: number;
+    baz: boolean;
+  };
+
+  type Joined = Assign<A, B>;
+
+  assertTrue<Equals<Joined, { foo: number; bar: number; baz: boolean }>>();
 });

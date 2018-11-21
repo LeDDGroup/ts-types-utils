@@ -3,9 +3,12 @@
   "version": "1.0.1",
   "description": "Type utilities for typescript",
   "keywords": [
+    "and",
     "args",
     "arguments",
+    "assign",
     "function",
+    "join",
     "types",
     "typescript",
     "utilities",

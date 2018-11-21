@@ -46,3 +46,31 @@ const foo = {
 const funcs: NonFunctionProperties<typeof foo> // { a: string, b: number }
 const funcs: FunctionProperties<typeof foo> // { c: () => void; d: (hello: string) => number }
 ```
+
+### Assign
+
+`Assign<A, B>` like A & B but replaces intersected A types with the ones from B
+
+```ts
+import { Assign } from "ts-types-utils";
+
+type A = {
+  foo: string;
+  bar: number;
+};
+type B = {
+  foo: number;
+  baz: boolean;
+};
+
+const bad: A & B = {
+  foo: 1, // error type string | number doesn't match number
+  bar: 2,
+  baz: false
+};
+const good: Assign<A, B> = {
+  foo: 1,
+  bar: 2,
+  baz: false
+};
+```
