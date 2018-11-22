@@ -47,6 +47,29 @@ const nonfuncs: NonFunctionProperties<Foo>; // { a: string, b: number }
 const funcs: FunctionProperties<Foo>; // { c: () => void; d: (hello: string) => number }
 ```
 
+### MatchNames
+
+`MatchNames<T, M, F> // T is object, M is what to match to, F negate`
+
+Get properties names from T that match M, or not match M if F is false
+
+```ts
+import { MatchNames } from "ts-types-utils";
+
+type FunctionPropertiesNames<T> = Match<T, Function>; // MatchNames<T, Function, true>
+type NonFunctionPropertiesNames<T> = Match<T, Function, false>;
+
+type Foo = {
+  a: string;
+  b: number;
+  c: () => void;
+  d: (hello: string) => number;
+};
+
+const nonfuncs: NonFunctionPropertiesNames<Foo>; // "a" | "b"
+const funcs: FunctionPropertiesNames<Foo>; // "c" | "d"
+```
+
 ### Assign
 
 `Assign<A, B>` like A & B but replaces intersected A types with the ones from B

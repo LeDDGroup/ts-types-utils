@@ -59,6 +59,6 @@
     "standard-version": "^4.4.0",
     "ts-jest": "^23.10.4",
     "typescript": "^3.1.6",
-    "typescript-test-utils": "^1.2.0"
+    "typescript-test-utils": "^1.2.1"
   }
 }

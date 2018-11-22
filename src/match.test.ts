@@ -1,5 +1,6 @@
-import { assertTrue, Equals } from "typescript-test-utils";
+import { assertTrue, Equals, Extends } from "typescript-test-utils";
 import { Match } from "./index";
+import { MatchNames } from "./match";
 
 it("Match", () => {
   type FunctionProperties<T> = Match<T, Function>;
@@ -22,4 +23,21 @@ it("Match", () => {
   >();
 
   assertTrue<Equals<FunctionProperties<TestObject>, { b: () => void }>>();
+});
+
+it("MatchNames", () => {
+  type FunctionPropertiesNames<T> = MatchNames<T, Function>;
+  type NonFunctionPropertiesNames<T> = MatchNames<T, Function, false>;
+
+  type TestObject = {
+    a: string;
+    b: () => void;
+    c: {
+      foo: string;
+      bar: () => string;
+    };
+  };
+
+  assertTrue<Equals<FunctionPropertiesNames<TestObject>, "b">>();
+  assertTrue<Equals<NonFunctionPropertiesNames<TestObject>, "a" | "c">>();
 });
