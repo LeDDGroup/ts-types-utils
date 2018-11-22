@@ -4,6 +4,7 @@ node_js:
 deploy:
   provider: npm
   email: danielpza@protonmail.com
+  skip_cleanup: true
   api_key:
     secure: tdxYcgotGMnr/ZW/leqGzshFgI8iB6Kj4/AM/QYucHgk0fOx7N/u+EfB/GDRtiMIlWLXXfXVkyyCFpci8TMmr9GQoY+x3BQY46qBGNd70iuj9qaEMDsug+WFYdkRxU8spUmvKgCGD38JIeVNSt2RbxWiNmFkViJT3af1z+ejq8zOl6cKjvwFmaw87ug5fnKTOo2gkQcq1p43gzFHGUBgCZCpvxO05sjoscmyk/SHltI7HLrW4Ejh8prXXiQAJy/PP6JkXQFit5FEyRM/yq4P0hwvT8XJeC458x/+UQ/ZlIEENx6fuLdSLPBwe5XxtWf31mNXZkTLUv5jJrCmYyExDNmHgROTHkePa8cOZgxsSKIJome/Z+hpEplByxMQgvn7RUvt/LGirHjtmddUfhpf0SXnITua3Ws7qk43eGC4+cMQfuAExAVgzEE0Zk1dk/YyFxnUnq7GljsVjlmboDpSP1hoJgN31x9ZcLpsSbz8ZtqybD+B1ypoPCjvFsOKPp1US2z1pzk7hR02JuGFWneJl8i2cnCf0uS2iWrQbc9ZUN+2B/xJKrtu7wv80nS6mFL8kHvFnUpiG4jY5cwAGHPGRCiaTtA/aUlgo91SuGnuA2xPDXhIZG3mY/dBS6r3vyoGObsArO2U94k+FwhGUd1gl68h6dctMz2nB9MjOPpeBQk=
   on:
