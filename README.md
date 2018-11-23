@@ -6,9 +6,25 @@
 
 Type utilities for typescript
 
+**Table of Contents**
+
+- [Usage](#usage)
+  - [ArgsType](#argstype)
+  - [Func](#func)
+  - [Match](#match)
+  - [MatchNames](#matchnames)
+  - [Assign](#assign)
+- [Related](#related)
+
 ## Usage
 
-Import types and use them ;-)
+```sh
+npm i -D ts-type-utils
+```
+
+```ts
+import * as TsTypeUtils from "ts-type-utils";
+```
 
 ### ArgsType
 
