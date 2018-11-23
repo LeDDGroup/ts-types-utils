@@ -1,3 +1,3 @@
 export { Match, MatchNames } from "./match";
-export { ArgsType } from "./func";
+export { ArgsType, Func } from "./func";
 export { Assign } from "./assign";

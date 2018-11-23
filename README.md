@@ -24,6 +24,18 @@ const first: ArgsType<typeof myFunc>[0]; // string
 const second: ArgsType<typeof myFunc>[1]; // number
 ```
 
+### Func
+
+`Func<P, R> // P: params type, R: return type`
+
+This doesn't really bring much but syntactic sugar
+
+```ts
+import { Func } from "ts-types-utils";
+
+const myfunc: Func<[string, number], boolean>; // (a: string, b: number) => boolean
+```
+
 ### Match
 
 `Match<T, M, F> // T is object, M is what to match to, F negate`
