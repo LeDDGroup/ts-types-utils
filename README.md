@@ -84,8 +84,8 @@ Get properties names from T that match M, or not match M if F is false
 ```ts
 import { MatchNames } from "ts-types-utils";
 
-type FunctionPropertiesNames<T> = Match<T, Function>; // MatchNames<T, Function, true>
-type NonFunctionPropertiesNames<T> = Match<T, Function, false>;
+type FunctionPropertiesNames<T> = MatchNames<T, Function>; // MatchNames<T, Function, true>
+type NonFunctionPropertiesNames<T> = MatchNames<T, Function, false>;
 
 type Foo = {
   a: string;
