@@ -9,7 +9,7 @@ Type utilities for typescript
 **Table of Contents**
 
 - [Usage](#usage)
-  - [ArgsType](#argstype)
+  - [ArgsType ( DEPRECATED: already in std types as Parameters<T> )](#argstype--deprecated-already-in-std-types-as-parameterst-)
   - [Func](#func)
   - [Match](#match)
   - [MatchNames](#matchnames)
@@ -26,7 +26,7 @@ npm i -D ts-type-utils
 import * as TsTypeUtils from "ts-type-utils";
 ```
 
-### ArgsType
+### ArgsType ( DEPRECATED: already in std types as Parameters<T> )
 
 `ArgsType<F> // F is function`
 
