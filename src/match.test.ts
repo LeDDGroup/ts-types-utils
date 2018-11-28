@@ -1,4 +1,4 @@
-import { assertTrue, Equals, Extends } from "typescript-test-utils";
+import { assertTrue, Equals } from "typescript-test-utils";
 import { Match } from "./index";
 import { MatchNames } from "./match";
 

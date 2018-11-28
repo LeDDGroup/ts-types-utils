@@ -1,4 +1,4 @@
-import { assertTrue, Equals, assertFalse } from "typescript-test-utils";
+import { assertTrue, Equals } from "typescript-test-utils";
 import { ArgsType, Func } from "./index";
 
 it("ArgsType", () => {
