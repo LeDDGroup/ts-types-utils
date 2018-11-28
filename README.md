@@ -9,11 +9,11 @@ Type utilities for typescript
 **Table of Contents**
 
 - [Usage](#usage)
-  - [ArgsType ( DEPRECATED: already in std types as Parameters<T> )](#argstype--deprecated-already-in-std-types-as-parameterst-)
-  - [Func](#func)
   - [Match](#match)
   - [MatchNames](#matchnames)
   - [Assign](#assign)
+  - [Func](#func)
+  - [ArgsType ( DEPRECATED: already in std types as Parameters<T> )](#argstype--deprecated-already-in-std-types-as-parameterst-)
 - [Related](#related)
 
 ## Usage
@@ -24,32 +24,6 @@ npm i -D ts-type-utils
 
 ```ts
 import * as TsTypeUtils from "ts-type-utils";
-```
-
-### ArgsType ( DEPRECATED: already in std types as Parameters<T> )
-
-`ArgsType<F> // F is function`
-
-Like built-in `ReturnType` but for the args of a function, works for any number of arguments
-
-```ts
-import { ArgsType } from "ts-types-utils";
-function myFunc(a: string, b: number) {}
-const all: ArgsType<typeof myFunc>; // [string, number]
-const first: ArgsType<typeof myFunc>[0]; // string
-const second: ArgsType<typeof myFunc>[1]; // number
-```
-
-### Func
-
-`Func<P, R> // P: params type, R: return type`
-
-This doesn't really bring much but syntactic sugar
-
-```ts
-import { Func } from "ts-types-utils";
-
-const myfunc: Func<[string, number], boolean>; // (a: string, b: number) => boolean
 ```
 
 ### Match
@@ -124,6 +98,32 @@ const good: Assign<A, B> = {
   bar: 2,
   baz: false
 };
+```
+
+### Func
+
+`Func<P, R> // P: params type, R: return type`
+
+This doesn't really bring much but syntactic sugar
+
+```ts
+import { Func } from "ts-types-utils";
+
+const myfunc: Func<[string, number], boolean>; // (a: string, b: number) => boolean
+```
+
+### ArgsType ( DEPRECATED: already in std types as Parameters<T> )
+
+`ArgsType<F> // F is function`
+
+Like built-in `ReturnType` but for the args of a function, works for any number of arguments
+
+```ts
+import { ArgsType } from "ts-types-utils";
+function myFunc(a: string, b: number) {}
+const all: ArgsType<typeof myFunc>; // [string, number]
+const first: ArgsType<typeof myFunc>[0]; // string
+const second: ArgsType<typeof myFunc>[1]; // number
 ```
 
 ## Related
