@@ -9,14 +9,14 @@ Type utilities for typescript
 **Table of Contents**
 
 - [ts-types-utils](#ts-types-utils)
-- [Usage](#usage)
-  - [Match](#match)
-  - [MatchNames](#matchnames)
-  - [Assign](#assign)
-  - [Func](#func)
-  - [PromiseOr](#promiseor)
-  - [Action](#action)
-  - [ArgsType ( DEPRECATED: already in std types as Parameters<T> )](#argstype--deprecated-already-in-std-types-as-parameterst-)
+  - [Usage](#usage)
+    - [Match](#match)
+    - [MatchNames](#matchnames)
+    - [Assign](#assign)
+    - [Func](#func)
+    - [PromiseOr](#promiseor)
+    - [Action](#action)
+    - [ArgsType ( DEPRECATED: already in std types as Parameters<T> )](#argstype--deprecated-already-in-std-types-as-parameterst-)
   - [Related](#related)
   - [Contributors](#contributors)
 
@@ -177,3 +177,8 @@ const second: ArgsType<typeof myFunc>[1]; // number
 ## Related
 
 Tests were made with [typescript-test-utils](https://github.com/danielpa9708/typescript-test-utils "typescript-test-utils")
+
+## Contributors
+
+- **@danielpa9708**
+- **@cloudrex**.
