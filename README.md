@@ -8,13 +8,17 @@ Type utilities for typescript
 
 **Table of Contents**
 
+- [ts-types-utils](#ts-types-utils)
 - [Usage](#usage)
   - [Match](#match)
   - [MatchNames](#matchnames)
   - [Assign](#assign)
   - [Func](#func)
+  - [PromiseOr](#promiseor)
+  - [Action](#action)
   - [ArgsType ( DEPRECATED: already in std types as Parameters<T> )](#argstype--deprecated-already-in-std-types-as-parameterst-)
-- [Related](#related)
+  - [Related](#related)
+  - [Contributors](#contributors)
 
 ## Usage
 
@@ -110,6 +114,50 @@ This doesn't really bring much but syntactic sugar
 import { Func } from "ts-types-utils";
 
 const myfunc: Func<[string, number], boolean>; // (a: string, b: number) => boolean
+```
+
+### PromiseOr
+
+```ts
+PromiseOr<T> = T | Promise<T>
+```
+
+Why? Because it gets cumbersome having to repeat long types again and again. I've found myself using this a lot, specially in interfaces (for greater flexibility).
+
+```ts
+export function test(): Promise<string> | string { ... }
+```
+
+Can be simplified to
+
+```ts
+export function test(): PromiseOr<string> { ... }
+```
+
+### Action
+
+```ts
+Action<T = void> = () => Action
+```
+
+Why? Because it gets tiring and makes the code less clear having to write function types.
+
+```ts
+export function invoke(callback: () => string)): void { ... }
+
+export function invoke(callback: () => string | number | object)): void { ... }
+
+export function invoke(callback: () => boolean | object)): () => boolean | string { ... }
+```
+
+Can be simplified to
+
+```ts
+export function invoke(callback: Action<string>)): void { ... }
+
+export function invoke(callback: Action<string | number | object>): void { ... }
+
+export function invoke(callback: Action<boolean | object>):  Action<boolean | string> { ...
 ```
 
 ### ArgsType ( DEPRECATED: already in std types as Parameters<T> )
