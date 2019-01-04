@@ -180,5 +180,8 @@ Tests were made with [typescript-test-utils](https://github.com/danielpa9708/typ
 
 ## Contributors
 
+[![](https://img.shields.io/github/contributors/LeDDGroup/ts-types-utils.svg)](https://github.com/LeDDGroup/ts-types-utils/graphs/contributors)
+
 - **@danielpa9708**
-- **@cloudrex**.
+- **@cloudrex**
+- **@luisenrike**
