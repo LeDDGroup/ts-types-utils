@@ -16,6 +16,7 @@ Type utilities for typescript
     - [Func](#func)
     - [PromiseOr](#promiseor)
     - [Action](#action)
+    - [UndefinedToOptional](#undefinedtooptional)
     - [ArgsType ( DEPRECATED: already in std types as Parameters<T> )](#argstype--deprecated-already-in-std-types-as-parameterst-)
   - [Related](#related)
   - [Contributors](#contributors)
@@ -158,6 +159,27 @@ export function invoke(callback: Action<string>)): void { ... }
 export function invoke(callback: Action<string | number | object>): void { ... }
 
 export function invoke(callback: Action<boolean | object>):  Action<boolean | string> { ...
+```
+
+### UndefinedToOptional
+
+```ts
+UndefinedToOptional<T>
+```
+
+```ts
+import { UndefinedToOptional } from "ts-types-utils";
+
+interface Options {
+  times: number | undefined
+}
+function foo(options: Options) {}
+foo({}) // Error expected times
+
+function bar(options: UndefinedToOptional<Options>) {}
+bar({}) // Good: times is optional now
+
+UndefinedToOptional<Options> // { times?: number }
 ```
 
 ### ArgsType ( DEPRECATED: already in std types as Parameters<T> )
